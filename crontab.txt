@@ -1,0 +1,18 @@
+MAILTO="your@email.com"
+
+# Reload the crontab from a file every minute so that the crontab is source
+# controlled and we only need to run the `crontab` command once.
+* * * * * crontab ~/your-python-tool/crontab.txt
+
+# * * * * *  command to execute
+# ┬ ┬ ┬ ┬ ┬
+# │ │ │ │ │
+# │ │ │ │ │
+# │ │ │ │ └───── day of week (0 - 6) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+# │ │ │ └────────── month (1 - 12)
+# │ │ └─────────────── day of month (1 - 31)
+# │ └──────────────────── hour (0 - 23)
+# └───────────────────────── min (0 - 59)
+
+# Run on minutes :33 and :57 from 9am to 10pm
+33,57 9-22 * * * ~/your-python-tool/run.sh
